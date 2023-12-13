@@ -21,7 +21,7 @@ let fetchArticles = async () => {
       })
       .join("");
 
-    article.innerHTML = html;
+    article.innerHTML = `<h1> ${data.publication}</h1>` + html;
   } catch (error) {
     console.warn(error);
   }

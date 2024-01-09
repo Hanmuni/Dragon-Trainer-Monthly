@@ -27,8 +27,9 @@ let displayContent = (data) => {
 
       return `
           <h3>${article.title}</h3>
-          <p>By ${article.author} </p>
-          <p>${authorData.bio}</p>
+          <p>By ${article.author} <br>
+          ${authorData.bio}
+          </p>
           <p>Published: ${article.pubdate}</p>
           <article>${article.article}</article>
     `;

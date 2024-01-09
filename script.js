@@ -1,4 +1,4 @@
-article = document.querySelector("#article");
+let article = document.querySelector("#article");
 let url = "https://vanillajsacademy.com/api/dragons.json";
 
 let fetchArticles = async () => {

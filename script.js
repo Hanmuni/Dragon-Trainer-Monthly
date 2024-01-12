@@ -6,8 +6,6 @@ const fetchUrls = async () => {
   try {
     let responses = await Promise.all([fetch(url), fetch(url2)]);
 
-    if (!responses.every((response) => response.ok)) throw responses;
-
     let data = await Promise.all(responses.map((response) => response.json()));
 
     console.log("This is the APIs data", data);

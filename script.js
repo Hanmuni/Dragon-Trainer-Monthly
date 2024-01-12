@@ -1,5 +1,5 @@
 let article = document.querySelector("#article");
-let url = "https://vanillajsacademy.com/api/dragons.json";
+const url = "https://vanillajsacademy.com/api/dragons.json";
 
 let fetchArticles = async () => {
   try {
@@ -10,21 +10,25 @@ let fetchArticles = async () => {
     let data = await response.json();
     console.log("This is the API data", data);
 
-    const html = data.articles
-      .map((article) => {
-        return `
-          <h3>${article.title}</h3>
-          <p>By ${article.author}</hp>
-          <p>${article.pubdate} </p>
-          <article>${article.article}</article>
-      `;
-      })
-      .join("");
-
-    article.innerHTML = `<h1> ${data.publication}</h1>` + html;
+    displayContent(data);
   } catch (error) {
     console.warn(error);
   }
+};
+
+let displayContent = (data) => {
+  const html = data.articles
+    .map((article) => {
+      return `
+      <h3>${article.title}</h3>
+      <p>By ${article.author}</p>
+      <p>${article.pubdate} </p>
+      <article>${article.article}</article>
+  `;
+    })
+    .join("");
+
+  article.innerHTML = `<h1> ${data.publication}</h1>` + html;
 };
 
 fetchArticles();

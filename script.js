@@ -1,6 +1,6 @@
 let article = document.querySelector("#article");
-let url = "https://vanillajsacademy.com/api/dragons.json";
-let url2 = "https://vanillajsacademy.com/api/dragons-authors.json";
+const url = "https://vanillajsacademy.com/api/dragons.json";
+const url2 = "https://vanillajsacademy.com/api/dragons-authors.json";
 
 let fetchUrls = async () => {
   try {
